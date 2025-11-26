@@ -21,7 +21,7 @@ int main() {
 		if (scanf("%lf %lf", &a, &b) != 2) {
 			printf("Error: Invalid input (not numbers)\n");
 			return 1;
-        }
+		}
 	}
 
 	switch (op)
