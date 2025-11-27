@@ -5,28 +5,28 @@ TARGET = calculator
 
 all: $(TARGET)
 
-diff.o: diff.c calc_func.h
+diff.o: diff.c
 	$(CC) -c diff.c
 
-factorial.o: factorial.c calc_func.h
+factorial.o: factorial.c
 	$(CC) -c factorial.c
 
-fraction.o: fraction.c calc_func.h
+fraction.o: fraction.c
 	$(CC) -c fraction.c
 
-product.o: product.c calc_func.h
+product.o: product.c
 	$(CC) -c product.c
 
-sqrt.o: sqrt.c calc_func.h
+sqrt.o: sqrt.c
 	$(CC) -c sqrt.c
 
-sum.o: sum.c calc_func.h
+sum.o: sum.c
 	$(CC) -c sum.c
 
 libcalc.a: diff.o factorial.o fraction.o product.o sqrt.o sum.o
-	ar rcs libcalc.a diff.o factorial.o fraction.o product.o sqrt.o sum.o
+	ar rcs libcalc.a *.o
 
-main.o: main.c calc_func.h
+main.o: main.c
 	$(CC) $(CFLAGS) -c main.c
 
 # -L. вказує шукати бібліотеки у поточній папці
