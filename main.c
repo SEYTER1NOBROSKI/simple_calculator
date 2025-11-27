@@ -1,6 +1,5 @@
 #include "calc_func.h"
 #include <stdio.h>
-#include <math.h>
 
 int main() {
 	char op;
@@ -12,13 +11,13 @@ int main() {
 
 	if (op == '!' || op == 'r') {
 		printf("Enter operand: ");
-		if (scanf("%lf", &a) != 1) {
+		if (scanf("%15lf", &a) != 1) {
 			printf("Error: Invalid input (not a number)\n");
 			return 1;
 		}
 	} else {
 		printf("Enter two operands: ");
-		if (scanf("%lf %lf", &a, &b) != 2) {
+		if (scanf("%15lf %15lf", &a, &b) != 2) {
 			printf("Error: Invalid input (not numbers)\n");
 			return 1;
 		}
@@ -55,7 +54,7 @@ int main() {
 	}
 
 	if (valid_operation && !isnan(res)) {
-		printf("Result: %.2lf\n", res);
+		printf("Result: %.5lf\n", res);
 	}
 
 	return 0;

@@ -5,11 +5,26 @@ TARGET = calculator
 
 all: $(TARGET)
 
-calc_func.o: calc_func.c calc_func.h
-	$(CC) -c calc_func.c
+diff.o: diff.c calc_func.h
+	$(CC) -c diff.c
 
-libcalc.a: calc_func.o
-	ar rcs libcalc.a calc_func.o
+factorial.o: factorial.c calc_func.h
+	$(CC) -c factorial.c
+
+fraction.o: fraction.c calc_func.h
+	$(CC) -c fraction.c
+
+product.o: product.c calc_func.h
+	$(CC) -c product.c
+
+sqrt.o: sqrt.c calc_func.h
+	$(CC) -c sqrt.c
+
+sum.o: sum.c calc_func.h
+	$(CC) -c sum.c
+
+libcalc.a: diff.o factorial.o fraction.o product.o sqrt.o sum.o
+	ar rcs libcalc.a diff.o factorial.o fraction.o product.o sqrt.o sum.o
 
 main.o: main.c calc_func.h
 	$(CC) $(CFLAGS) -c main.c
